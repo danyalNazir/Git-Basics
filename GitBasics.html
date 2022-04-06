@@ -207,6 +207,30 @@
           git remote rm upstream
         </p>
       </li>
+      <li>
+        <h1>Rewriting History</h1>
+        <h3>Undoing commits</h3>
+        <p>
+          git reset --soft HEAD^ <br />
+          git reset --mixed HEAD^ <br />
+          git reset --hard HEAD^
+        </p>
+        <h3>Reverting commits</h3>
+        <p>
+          git revert 72856ea <br />
+          git revert HEAD~3.. <br />
+          git revert --no-commit HEAD~3..
+        </p>
+        <h3>Recovering lost commits</h3>
+        <p>
+          git reflog <br />
+          git reflog show bugfix
+        </p>
+        <h3>Amending the last commit</h3>
+        <p>git commit --amend</p>
+        <h3>Interactive rebasing</h3>
+        <p>git rebase -i HEAD~5</p>
+      </li>
     </ol>
   </body>
 </html>
