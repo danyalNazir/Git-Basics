@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snapshots Commands</title>
+  </head>
+  <body>
+    <h1>Creating Snapshots:</h1>
+
+    <h3>Initializing a repository</h3>
+    <p>git init</p>
+    <h3>Staging files</h3>
+    <p>
+      git add file1.js<br />
+      git add file1.js file2.js<br />
+      git add *.js <br />
+      git add .
+    </p>
+    <h3>Viewing the status</h3>
+    <p>
+      git status <br />
+      git status -s
+    </p>
+
+    <h3>Committing the staged files</h3>
+    <p>
+      git commit -m “Message” <br />
+      git commit
+    </p>
+    <h3>Skipping the staging area</h3>
+    <p>git commit -am “Message”</p>
+    <h3>Removing files</h3>
+    <p>
+      git rm file1.js <br />
+      git rm --cached file1.js
+    </p>
+    <h3>Renaming or moving files</h3>
+    <p>git mv file1.js file1.txt</p>
+    <h3>Viewing the staged/unstaged changes</h3>
+    <p>
+      git diff <br />
+      git diff --staged <br />
+      git diff --cached
+    </p>
+    <h3>Viewing the history</h3>
+    <p>
+      git log <br />
+      git log --oneline <br />
+      git log --reverse
+    </p>
+    <h3>Viewing a commit</h3>
+    <p>
+      git show 921a2ff <br />
+      git show HEAD <br />
+      git show HEAD~2 <br />
+      git show HEAD:file.js
+    </p>
+    <h3>Unstaging files (undoing git add)</h3>
+    <p>git restore --staged file.js</p>
+    <h3>Discarding local changes</h3>
+    <p>
+      git restore file.js <br />
+      git restore file1.js file2.js <br />
+      git restore . <br />
+      git clean -fd
+    </p>
+    <h3>Restoring an earlier version of a file</h3>
+    <p>git restore --source=HEAD~2 file.js</p>
+  </body>
+</html>

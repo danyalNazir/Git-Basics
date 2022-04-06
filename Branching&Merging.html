@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Branching & Merging Commands</title>
+  </head>
+  <body>
+    <h1>Branching & Merging:</h1>
+
+    <h3>Managing branches</h3>
+    <p>
+      git branch bugfix <br />
+      git checkout bugfix <br />
+      git switch bugfix <br />
+      git switch -C bugfix <br />
+      git branch -d bugfix
+    </p>
+    <h3>Comparing branches</h3>
+    <p>
+      git log master..bugfix <br />
+      git diff master..bugfix
+    </p>
+    <h3>Stashing</h3>
+    <p>
+      git stash push -m “New tax rules” <br />
+      git stash list <br />
+      git stash show stash@{1} <br />
+      git stash show 1 <br />
+      git stash apply 1 <br />
+      git stash drop 1 <br />
+      git stash clear
+    </p>
+    <h3>Merging</h3>
+    <p>
+      git merge bugfix <br />
+      git merge --no-ff bugfix <br />
+      git merge --squash bugfix <br />
+      git merge --abort
+    </p>
+    <h3>Viewing the merged branches</h3>
+    <p>
+      git branch --merged <br />
+      git branch --no-merged
+    </p>
+    <h3>Rebasing</h3>
+    <p>git rebase master</p>
+  </body>
+</html>

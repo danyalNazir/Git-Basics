@@ -5,232 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git Basics</title>
-    <style>
-      ol {
-        font-size: 25px;
-        color: red;
-      }
-      ol p,
-      h3 {
-        color: black;
-      }
-    </style>
   </head>
   <body>
     <img src="git.png" alt="Git Logo" srcset="" width="1350px" height="200px" />
-    <h1 style="color: orangered; font-size: 50px">Git Cheat Sheet</h1>
-    <h2>The essential Git commands every developer must know...</h2>
+    <h1>Git Cheat Sheet</h1>
+    <h3>The essential Git commands every developer must know...</h3>
 
-    <h2 style="font-size: 40px; text-align: center">Table of Content</h2>
+    <h2>Table of Content</h2>
     <ul style="font-size: 25px">
-      <li>Creating Snapshots</li>
-      <li>Browsing History</li>
-      <li>Branching & Merging</li>
-      <li>Collaboration</li>
-      <li>History</li>
+      <li>
+        <a href="Snapshots.html" target="_blank"> Creating Snapshots</a>
+      </li>
+      <li>
+        <a href="BrowsingHistory.html" target="_blank"> Browsing History</a>
+      </li>
+      <li>
+        <a href="Branching&Merging.html" target="_blank">
+          Branching & Merging</a
+        >
+      </li>
+      <li>
+        <a href="Collaboration.html" target="_blank"> Collaboration</a>
+      </li>
+      <li>
+        <a href="RewritingHistory.html" target="_blank">Rewriting History</a>
+      </li>
     </ul>
-
-    <ol>
-      <li>
-        <h1>Creating Snapshots:</h1>
-
-        <h3>Initializing a repository</h3>
-        <p>git init</p>
-        <h3>Staging files</h3>
-        <p>
-          add file1.js<br />
-          git add file1.js file2.js<br />
-          git add *.js <br />
-          git add .
-        </p>
-        <h3>Viewing the status</h3>
-        <p>
-          git status <br />
-          git status -s
-        </p>
-
-        <h3>Committing the staged files</h3>
-        <p>
-          commit -m “Message” <br />
-          git commit
-        </p>
-        <h3>Skipping the staging area</h3>
-        <p>commit -am “Message”</p>
-        <h3>Removing files</h3>
-        <p>
-          git rm file1.js <br />
-          git rm --cached file1.js
-        </p>
-        <h3>Renaming or moving files</h3>
-        <p>mv file1.js file1.txt</p>
-        <h3>Viewing the staged/unstaged changes</h3>
-        <p>
-          git diff <br />
-          git diff --staged <br />
-          git diff --cached
-        </p>
-        <h3>Viewing the history</h3>
-        <p>
-          git log <br />
-          git log --oneline <br />
-          git log --reverse
-        </p>
-        <h3>Viewing a commit</h3>
-        <p>
-          git show 921a2ff <br />
-          git show HEAD <br />
-          git show HEAD~2 <br />
-          git show HEAD:file.js
-        </p>
-        <h3>Unstaging files (undoing git add)</h3>
-        <p>restore --staged file.js</p>
-        <h3>Discarding local changes</h3>
-        <p>
-          git restore file.js <br />
-          git restore file1.js file2.js <br />
-          git restore . <br />
-          git clean -fd
-        </p>
-        <h3>Restoring an earlier version of a file</h3>
-        <p>restore --source=HEAD~2 file.js</p>
-      </li>
-      <li>
-        <h1>Browsing History:</h1>
-        <h3>Viewing the history</h3>
-        <p>
-          git log --stat <br />
-          git log --patch
-        </p>
-
-        <h3>Filtering the history</h3>
-        <p>
-          git log -3 <br />
-          git log --author=“Mosh” <br />
-          git log --before=“2020-08-17” <br />
-          git log --after=“one week ago” <br />
-          git log --grep=“GUI” <br />
-          git log -S“GUI” <br />
-          git log hash1..hash2 <br />
-          git log file.txt
-        </p>
-        <h3>Viewing a commit</h3>
-        <p>
-          git show HEAD~2 <br />
-          git show HEAD~2:file1.txt
-        </p>
-
-        <h3>Comparing commits</h3>
-        <p>
-          git diff HEAD~2 HEAD <br />
-          git diff HEAD~2 HEAD file.txt
-        </p>
-        <h3>Checking out a commit</h3>
-        <p>
-          git checkout dad47ed <br />
-          git checkout master
-        </p>
-        <h3>Finding contributors</h3>
-        <p>git shortlog</p>
-        <h3>Finding the author of lines</h3>
-        <p>git blame file.txt</p>
-      </li>
-      <li>
-        <h1>Branching & Merging</h1>
-        <h3>Managing branches</h3>
-        <p>
-          git branch bugfix <br />
-          git checkout bugfix <br />
-          git switch bugfix <br />
-          git switch -C bugfix <br />
-          git branch -d bugfix
-        </p>
-        <h3>Comparing branches</h3>
-        <p>
-          git log master..bugfix <br />
-          git diff master..bugfix
-        </p>
-        <h3>Stashing</h3>
-        <p>
-          git stash push -m “New tax rules” <br />
-          git stash list <br />
-          git stash show stash@{1} <br />
-          git stash show 1 <br />
-          git stash apply 1 <br />
-          git stash drop 1 <br />
-          git stash clear
-        </p>
-        <h3>Merging</h3>
-        <p>
-          git merge bugfix <br />
-          git merge --no-ff bugfix <br />
-          git merge --squash bugfix <br />
-          git merge --abort
-        </p>
-        <h3>Viewing the merged branches</h3>
-        <p>
-          git branch --merged <br />
-          git branch --no-merged
-        </p>
-        <h3>Rebasing</h3>
-        <p>git rebase master</p>
-      </li>
-      <li>
-        <h1>Collaboration</h1>
-
-        <h3>Cloning a repository</h3>
-        <p>git clone url</p>
-        <h3>Syncing with remotes</h3>
-        <p>
-          git fetch origin master <br />
-          git fetch origin <br />
-          git fetch <br />
-          git pull <br />
-          git push origin master <br />
-          git push
-        </p>
-        <h3>Sharing tags</h3>
-        <p>
-          git push origin v1.0 <br />
-          git push origin —delete v1.
-        </p>
-        <h3>Sharing branches</h3>
-        <p>
-          git branch -r <br />
-          git branch -vv <br />
-          git push -u origin bugfix <br />
-          git push -d origin bugfix
-        </p>
-        <h3>Managing remotes</h3>
-        <p>
-          git remote <br />
-          git remote add upstream url <br />
-          git remote rm upstream
-        </p>
-      </li>
-      <li>
-        <h1>Rewriting History</h1>
-        <h3>Undoing commits</h3>
-        <p>
-          git reset --soft HEAD^ <br />
-          git reset --mixed HEAD^ <br />
-          git reset --hard HEAD^
-        </p>
-        <h3>Reverting commits</h3>
-        <p>
-          git revert 72856ea <br />
-          git revert HEAD~3.. <br />
-          git revert --no-commit HEAD~3..
-        </p>
-        <h3>Recovering lost commits</h3>
-        <p>
-          git reflog <br />
-          git reflog show bugfix
-        </p>
-        <h3>Amending the last commit</h3>
-        <p>git commit --amend</p>
-        <h3>Interactive rebasing</h3>
-        <p>git rebase -i HEAD~5</p>
-      </li>
-    </ol>
   </body>
 </html>

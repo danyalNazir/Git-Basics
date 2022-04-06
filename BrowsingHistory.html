@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browsing History Commands</title>
+  </head>
+  <body>
+    <h1>Browsing History:</h1>
+
+    <h3>Viewing the history</h3>
+    <p>
+      git log --stat <br />
+      git log --patch
+    </p>
+
+    <h3>Filtering the history</h3>
+    <p>
+      git log -3 <br />
+      git log --author=“Mosh” <br />
+      git log --before=“2020-08-17” <br />
+      git log --after=“one week ago” <br />
+      git log --grep=“GUI” <br />
+      git log -S“GUI” <br />
+      git log hash1..hash2 <br />
+      git log file.txt
+    </p>
+    <h3>Viewing a commit</h3>
+    <p>
+      git show HEAD~2 <br />
+      git show HEAD~2:file1.txt
+    </p>
+
+    <h3>Comparing commits</h3>
+    <p>
+      git diff HEAD~2 HEAD <br />
+      git diff HEAD~2 HEAD file.txt
+    </p>
+    <h3>Checking out a commit</h3>
+    <p>
+      git checkout dad47ed <br />
+      git checkout master
+    </p>
+    <h3>Finding contributors</h3>
+    <p>git shortlog</p>
+    <h3>Finding the author of lines</h3>
+    <p>git blame file.txt</p>
+  </body>
+</html>
